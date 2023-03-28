@@ -1,13 +1,14 @@
-import React, { fragment } from "react";
-import  './style.css'
+import React from "react";
+import GrayImg from "../../shared/gray_img";
+import DescriptionWithLink from '../../shared/descriptionWithLink'
 
-const Planet = () => {
+const Planet = (props) => {
     return (
-        <fragment>
-            <h4>Mercurio</h4>
-            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-            <img class='gray-img' src="https://ichef.bbci.co.uk/news/800/cpsprodpb/BA64/production/_109261774_mercurio.jpg"></img>
-        </fragment>
+        <div onClick={() => props.clickOnPlanet(props.name)}>
+            <h4>{props.name}</h4>
+            <DescriptionWithLink description={props.description} link={props.link}/>
+            <GrayImg img_url={props.img_url}/>
+        </div>
     )
 }
 
